@@ -1,0 +1,118 @@
+<ion-header>
+  <ion-title>Sınav Oluştur</ion-title>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="ayrintilar">
+        Sınav Ayrıntıları
+      </ion-segment-button>
+      <ion-segment-button value="sorular">
+        Sınav Soruları
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ 
+<div [ngSwitch]="pet">
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Güncelle"
+                           refreshingSpinner="circles"
+                           refreshingText="Yükleniyor...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+<div class="sinavAyrinti" *ngSwitchCase="'ayrintilar'">
+  <div class="sinavAyrinti">
+      <h3><u>Sınav Ayrıntıları</u> </h3>
+  </div>
+<br>
+  <div class="sinavAyrinti">
+    <div>
+      <ion-label>Sınav Başlığı:</ion-label>
+      <ion-input class="input" type="text" [(ngModel)]="sinavBaslik" placeholder="{{sinavBaslik}}"></ion-input>
+    </div>
+   <br>
+    <div>
+      <ion-label>Sınav Tarihi:</ion-label>
+      <ion-input class="input" type="date" [(ngModel)]="sinavTarih" placeholder="{{sinavTarih}}"></ion-input>
+    </div>
+    <br>
+    <div>
+      <ion-label>Sınav Saati:</ion-label>
+      <ion-input class="input" type="time" [(ngModel)]="sinavSaat" placeholder="{{sinavSaat}}"></ion-input>
+    </div>
+    <br>
+    <div>
+      <ion-label>Sınav Süresi:</ion-label>
+      <ion-input class="input" type="number" [(ngModel)]="sinavSure" placeholder="{{sinavSure}}"></ion-input>
+    </div>
+  </div>
+
+  <ion-button expand="block" color="secondary" (click)="sinavGuncelle()">Güncelle</ion-button>
+    
+</div>
+
+
+<div class="sinavAyrinti" *ngSwitchCase="'sorular'">
+  <div class="sinavAyrinti">
+    <h3><u>Sınav Soruları</u></h3>
+  </div>
+
+  <ion-item>
+    <ion-label>Soru Türü</ion-label>
+    <ion-select [(ngModel)]="turler" interface="popover">
+      <ion-select-option value="coktanSecmeli">Çoktan Seçmeli</ion-select-option>
+      <ion-select-option value="klasik">Klasik</ion-select-option>
+      <ion-select-option value="dogruYanlis">Doğru/Yanlış</ion-select-option>
+      <ion-select-option value="bosluk">Boşluk Doldurma</ion-select-option>
+    </ion-select>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Soru Sayısı</ion-label>
+    <ion-select  [(ngModel)]="soruSayisi" interface="popover" (ionChange)="selectCategory(soruSayisi)">
+      <ion-select-option *ngFor="let say of sayilar" [value]="say">
+        {{say}}
+      </ion-select-option>
+   </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Şık Sayısı</ion-label>
+    <ion-select  [(ngModel)]="cevapSayisi" interface="popover" (ionChange)="selectCategoryCevap(cevapSayisi)">
+      <ion-select-option *ngFor="let cev of cevaplar" [value]="cev">
+        {{cev}}
+      </ion-select-option>
+   </ion-select>
+  </ion-item>
+
+  <br>
+ 
+  <div *ngFor="let d of dizi">
+    <div class="soruDiv">
+
+        <ion-item>
+          <ion-textarea type=text [(ngModel)]="inputTexts[d]" placeholder="Soru metni" ></ion-textarea>
+        </ion-item>
+       
+        <div>
+          <ion-radio-group allow-empty-selection="true" name="radio-group" (click)="radioGroupChange($event)">      
+              <ion-item *ngFor="let dc of diziCevap">  
+                <ion-radio color="secondary" value="{{dc}}"></ion-radio>
+                <ion-textarea type=text  [(ngModel)]="inputCevap[dc]" placeholder="Cevabı gir" ></ion-textarea>
+              </ion-item>
+          </ion-radio-group>  
+        </div>
+
+    </div>
+    <br><br>
+  </div>
+
+ <!-- <ion-button expand="block" color="secondary" (click)="sinavOlustur()">Oluştur</ion-button> -->
+</div>
+
+  
+
+</div>
+</ion-content>

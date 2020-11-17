@@ -1,0 +1,68 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CLASSPOINT
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+
+  <div class="baslik">KAYIT OL</div>
+
+  <div class="kayit">
+    <ion-list >
+      <ion-item >
+        <ion-label  floating>Ad:</ion-label>
+        <ion-input  type="text" placeholder="Adınızı giriniz" [(ngModel)]="ad"></ion-input>
+      </ion-item>
+      <ion-item  >
+        <ion-label floating>Soyad:</ion-label>
+        <ion-input type="text" placeholder="Soyadınızı giriniz" [(ngModel)]="soyad"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Mail Adresi:</ion-label>
+        <ion-input type="text" placeholder="Mail adresi giriniz" [(ngModel)]="mailAdresi"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Şifre:</ion-label>
+        <ion-input type="password" placeholder="Şifre giriniz" [(ngModel)]="sifre"></ion-input>
+      </ion-item>
+      <ion-item >
+        <ion-label floating>Şifre Tekrarı:</ion-label>
+        <ion-input type="password" placeholder="Şifreyi tekrar giriniz" [(ngModel)]="sifreTekrari"></ion-input>
+      </ion-item>
+
+      <ion-item class="mesafe" >
+        <ion-radio-group (ionChange)="onChangeHandler($event)" >
+          <ion-label floating class="label">Seçim yapınız:</ion-label>
+          <ion-item>
+            <ion-radio value="isChecked1"></ion-radio>
+            <ion-label>Öğrenciyim</ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-radio value="isChecked2"></ion-radio>
+            <ion-label>Öğretmenim</ion-label>
+          </ion-item>
+        </ion-radio-group>
+      </ion-item>
+      
+    </ion-list>
+  </div>
+
+  <ion-row>
+    <ion-col width-50 style="text-align: right">
+      <ion-button icon-start color="dark" (click)="iptal()">
+      <ion-icon name="close"></ion-icon>
+      İptal
+      </ion-button>
+    </ion-col>
+    <ion-col width-50 style="text-align: left">
+      <ion-button icon-start color="secondary" (click)="kayitOl()">
+      <ion-icon name="person-add"></ion-icon>
+      Kayıt Ol
+      </ion-button>
+    </ion-col>
+  </ion-row>
+ 
+</ion-content>

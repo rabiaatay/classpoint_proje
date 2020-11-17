@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{sinifAd}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sinavOlustur()" fill="clear" >
+        <ion-icon color="secondary" name="create" slot="icon-only" style="height: 20px;"></ion-icon> 
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Güncelle"
+                           refreshingSpinner="circles"
+                           refreshingText="Yükleniyor...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-card class="sınıf_baslik" [style.background-color]="renk">
+    <ion-card-content>
+      <p style="font-weight: bold; font-size: large; color: black;">{{sinifAd}}</p>
+      <p style="color: black;">{{sinifBolum}}</p>
+      <br>
+      <p style="color: black;"><ion-icon style="color: black;" name="information-circle"></ion-icon>Sınıf Kodu: {{sinifKodu}}</p>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card class="paylasim">
+    <ion-card-content>
+      <ion-label position="floating" style="font-weight: bold; color: black;">Sınıfınız ile paylaşın </ion-label>
+      <ion-textarea type="text" [(ngModel)]="paylasim"></ion-textarea>
+      <ion-grid>
+        <ion-row>
+          <ion-col left width-50>
+            <ion-icon class="mini" name="attach" (click)="asf()" ></ion-icon>
+          </ion-col>
+    
+          <ion-col width-50 style="text-align: right;">
+           <ion-button class="paylas" color="secondary" (click)="paylas()">Paylaş</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     <!-- <input class="filebtn" type="file" #fileBtn (change)="fileChanged($event)">-->
+    </ion-card-content>
+  </ion-card>
+ 
+  <ion-card *ngFor="let veri of tum_paylasimlar" >
+    <ion-card-header style="font-weight: bold; color: black;">    
+        <p>{{veri.Table_Paylasim_paylasan_kisi_mail}} ({{veri.Table_Paylasim_paylasim_tarih}})</p>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p>{{veri.Table_Paylasim_paylasim_text}}</p>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

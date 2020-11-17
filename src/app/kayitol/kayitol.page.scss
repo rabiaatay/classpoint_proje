@@ -1,0 +1,68 @@
+
+.baslik{
+    margin-top: 50px;
+    text-align: center;
+    position: relative;
+    font-size: 1.7em;
+    font-weight: bold;
+    font-style: normal;
+    color: rgb(0, 0, 0);   
+}
+.kayit{
+    text-align: center;
+    margin-top: 30px;
+    background: transparent !important;
+}
+.color{
+    border-color: black; 
+    border-width: .01em; 
+    border-style:solid;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+}
+
+ion-label{
+    font-weight: bold;
+}
+.btncolor {
+    --background: rgb(54, 53, 53);
+
+    color: white;
+    position: relative;
+    margin-top: 7%;
+  
+}
+.btn{
+    --background: var(--ion-color-btn);
+    color: white;
+    margin-top: 7%;
+    margin-left: 15px;
+}
+
+ion-radio{
+    background: #FFFFFF;
+     //border-width: 1px !important;
+     border-style: solid !important;
+     border-color : rgb(187, 187, 187);
+     --height : 25px;
+     --width: 25px;
+     --checkmark-color : #FFFFFF;
+     --color-checked: rgb(187, 187, 187);
+     --border-color: #FFFFFF;
+     --border-color-checked :#FFFFFF;
+}
+.mesafe{
+    border-color: black; 
+    border-width: .01em; 
+    border-style:solid; 
+    border-radius: 10px; 
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.label{
+    margin-top: 5%; 
+    font-weight: bold;
+}

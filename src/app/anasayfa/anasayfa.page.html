@@ -1,0 +1,30 @@
+
+<ion-content padding class="background">
+
+  <div  class="baslik"><img class="baslikk" src="assets/images/classpoint.png"></div>
+
+  <ion-grid class="grid">
+    <ion-row class="row">
+      <ion-col width-50 style="text-align: right">
+        <div class="secim"  >
+          <button class="secim1" ion-button icon-start (click)="ogrenciGiris()">
+            <img src="assets/images/ogrenci.png" height="50px" width="70px">
+            Öğrenci Giriş
+          </button>
+        </div>
+      </ion-col>
+
+      <ion-col width-50 style="text-align: left">
+        <div class="secim"  >
+          <button class="secim1" ion-button icon-start (click)="ogretmenGiris()">
+            <img src="assets/images/ogretmen.png" height="50px" width="50px">
+            Öğretmen Giriş
+          </button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <p class="kayit">Henüz hesabın yok mu? <a class="a" (click)="KayitOl()">Kayıt ol</a></p>
+
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="secondary" defaultHref="anasayfa"></ion-back-button>
+    </ion-buttons>
+    <ion-title>CLASSPOINT</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="background">
+
+  <div  class="baslik">ÖĞRENCİ GİRİŞ</div>
+  
+  <div class="kayit">
+    <ion-list>
+
+      <ion-item>
+        <ion-input type="text" placeholder="Mail adresi" [(ngModel)]="mailAdresi"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="password" placeholder="Şifre" [(ngModel)]="sifre"></ion-input>
+      </ion-item>   
+
+    </ion-list>
+
+    <ion-button expand="block" color="secondary" (click)="girisYap()"> Giriş Yap </ion-button>
+
+  </div>
+
+  <p class="p">Henüz hesabın yok mu? <a class="a" (click)="KayitOl()">Kayıt ol</a></p>
+
+</ion-content>

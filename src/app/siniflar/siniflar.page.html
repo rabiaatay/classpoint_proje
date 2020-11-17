@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ogretmenAd}} {{ogretmenSoyad}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="sinifOlustur()" fill="clear" >
+        <ion-icon color="secondary" name="add" slot="icon-only" ></ion-icon> 
+      </ion-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Güncelle"
+                           refreshingSpinner="circles"
+                           refreshingText="Yükleniyor...">
+    </ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-searchbar placeholder="Sınıf Ara" (ionInput) = "getItems($event)" ></ion-searchbar>
+
+  <ion-list>
+    <ion-list-header style="font-size: medium;">SINIFLAR</ion-list-header>
+    <ion-item-sliding *ngFor="let sinif of tumSiniflar">
+      <ion-item (click)="sinifaGit(sinif.Table_Sinif_id)">
+        <ion-thumbnail slot="start">
+          <img src="assets/images/class.png">
+        </ion-thumbnail>
+        <ion-label>
+          <h3 style="font-weight: bold; font-size: large;"> {{sinif.Table_Sinif_sinif_ad}}</h3>
+          <h6>{{sinif.Table_Sinif_sinif_bolum}}</h6>
+          <p>Sınıf Kodu: {{sinif.Table_Sinif_sinif_kod}}</p>
+        </ion-label>    
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="sinifSil(sinif.Table_Sinif_id)" color="danger">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+          Sil
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+ <!-- <ion-card *ngFor="let sinif of tumSiniflar" (click)="sinifaGit(sinif.Table_Sinif_id)">
+    <ion-card-header style="font-weight: bold; font-size: large; color: black;"> 
+      {{sinif.Table_Sinif_sinif_ad}}
+    </ion-card-header>
+    
+    <ion-card-content>
+      <p>{{sinif.Table_Sinif_sinif_bolum}}</p>
+      <br><br>
+      <p><ion-icon name="information-circle"></ion-icon>Sınıf Kodu: {{sinif.Table_Sinif_sinif_kod}}</p>
+    </ion-card-content>
+  </ion-card>
+-->
+
+</ion-content>
