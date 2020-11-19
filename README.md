@@ -1,12 +1,3 @@
-# ionic-typeorm-starter
-
-<img src="./src/assets/images/ionic.png" height="54"/><img src="./src/assets/images/angular.png" height="54" style="margin-left: 16px"/><img src="./src/assets/images/cordova.png" height="54" style="margin-left: 16px"/><img src="./src/assets/images/typeorm.png" height="54" style="margin-left: 16px"/><img src="./src/assets/images/sqlite.png" height="54" style="margin-left: 16px"/>
-
-Starter template for build Ionic/Angular/Cordova apps with Typeorm.
-
-[![](https://github.com/coturiv/ionic-typeorm-starter/workflows/CI/badge.svg)](https://github.com/coturiv/ionic-typeorm-starter/actions)
-[![Renovate enabled](https://img.shields.io/badge/renovate-enabled-yellowgreen.svg)](https://renovatebot.com/)
-[![David](https://david-dm.org/coturiv/ionic-typeorm-starter/status.svg)](https://david-dm.org/coturiv/ionic-typeorm-starter)
 
 
 
@@ -18,10 +9,6 @@ Starter template for build Ionic/Angular/Cordova apps with Typeorm.
 - Run `npm install` from the project root.
 - Run `ionic serve` in a terminal from the project root.
 
-
-## Screenshot
-
-<img src="./screenshot.png" width="280" />
 
 ## Adding TypeORM to an existing app
 
