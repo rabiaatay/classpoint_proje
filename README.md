@@ -1,15 +1,4 @@
 
-
-
-## Getting Started
-
-- [Download the installer](https://nodejs.org/) for Node.js 10 or greater.
-- Install the ionic CLI globally: `npm install -g ionic`
-- Clone this repository: `git clone https://github.com/coturiv/ionic-typeorm-starter`.
-- Run `npm install` from the project root.
-- Run `ionic serve` in a terminal from the project root.
-
-
 ## Adding TypeORM to an existing app
 
 - Install dependencies
@@ -114,8 +103,5 @@
     ```
 
 ### References
-
 - https://typeorm.io/
-- https://github.com/kripken/sql.js/
-- https://github.com/just-jeb/angular-builders/tree/master/packages/custom-webpack
 
